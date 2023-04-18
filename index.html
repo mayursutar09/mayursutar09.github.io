@@ -10,7 +10,9 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-    <button id="update" onclick="updateValues()">update data</button>
+    <button
+      id="update"
+      onclick="updateValues()">update data</button>
 
     <pre id="content" style="white-space: pre-wrap"></pre>
 
@@ -130,7 +132,7 @@
         try {
           // Fetch first 10 files
           response = await gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: "12MfxgvsdW-qfZkgc_BDSQ_SlxU0poqJxJEgHK4bImsw",
+            spreadsheetId: "12MfxgvsdW-1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
             range: "Class Data!A2:E",
           });
         } catch (err) {
@@ -149,13 +151,7 @@
         );
         document.getElementById("content").innerText = output;
       }
-      function updateValues(
-        spreadsheetId,
-        range,
-        valueInputOption,
-        _values,
-        callback
-      ) {
+      function updateValues() {
         let values = [
           [
             // Cell values ...
