@@ -154,11 +154,9 @@
       function updateValues() {
         let values = [
           [
-            // Cell values ...
+            "mayursutar09","9307826630"
           ],
-          // Additional rows ...
         ];
-        values = _values;
         const body = {
           values: values,
         };
@@ -166,8 +164,8 @@
           gapi.client.sheets.spreadsheets.values
             .update({
               spreadsheetId: spreadsheetId,
-              range: range,
-              valueInputOption: valueInputOption,
+              range: "Sheet1!A1:B",
+              valueInputOption: RAW,
               resource: body,
             })
             .then((response) => {
